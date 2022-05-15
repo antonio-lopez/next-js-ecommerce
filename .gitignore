@@ -19,6 +19,7 @@ node_modules
 # misc
 .DS_Store
 *.pem
+externalApiFetch.js
 
 # debug
 npm-debug.log*
