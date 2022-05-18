@@ -15,8 +15,10 @@ module.exports = {
       },
       fontFamily: {
         // headings
+        // medium-500. semi-bold-600, bold-700
         serif: ['Lora'],
         // body
+        // medium-500, bold-700, black-900
         'sans-serif': ['Roboto'],
       },
     },
