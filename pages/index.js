@@ -1,12 +1,13 @@
 import React from 'react';
 import { client } from '../lib/client';
 import { urlFor } from '../lib/client';
-import { Layout, Footer, Navbar, Product, Cart } from '../components';
+import { Hero, Product, Cart } from '../components';
 
 const Home = ({ products }) => {
   return (
     <>
-      <div>
+      <Hero />
+      {/* <div>
         <h1>Title</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste facilis
@@ -17,19 +18,19 @@ const Home = ({ products }) => {
       </div>
       {products?.map((product) => (
         <Product key={product._id} product={product} />
-      ))}
+      ))} */}
+
       {/* <Product product={products.length && products[0]} /> */}
-      {/* <Footer /> */}
     </>
   );
 };
 
-export const getServerSideProps = async () => {
-  const query = '*[_type == "product"][0...5]';
-  const products = await client.fetch(query);
+// export const getServerSideProps = async () => {
+//   const query = '*[_type == "product"][0...5]';
+//   const products = await client.fetch(query);
 
-  return { props: { products } };
-};
+//   return { props: { products } };
+// };
 
 // get all amiibos
 // export const getServerSideProps = async () => {
