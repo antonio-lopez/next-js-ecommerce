@@ -10,6 +10,7 @@ module.exports = {
         lightBeige: '#FFFBE6',
         mossGreen: '#356859',
         darkGreen: '#37966F',
+        heavyGreen: '#2F4858',
         lightGreen: '#B9E4C9',
         pumpkinOrange: '#FD5523',
       },

@@ -2,8 +2,8 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <nav className='flex justify-between items-center px-5 bg-darkBeige h-14'>
-      <span className='font-serif font-semibold text-xl text-mossGreen'>
+    <nav className='flex h-14 items-center justify-between bg-darkBeige px-5'>
+      <span className='font-serif text-xl font-semibold text-heavyGreen'>
         Amiibo Hub
       </span>
       {/* menu icon */}

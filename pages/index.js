@@ -1,12 +1,13 @@
 import React from 'react';
 import { client } from '../lib/client';
 import { urlFor } from '../lib/client';
-import { Hero, Product, Cart } from '../components';
+import { Hero, Main, Product, Cart } from '../components';
 
 const Home = ({ products }) => {
   return (
     <>
       <Hero />
+      <Main />
       {/* <div>
         <h1>Title</h1>
         <p>
