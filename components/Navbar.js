@@ -1,11 +1,14 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Navbar = () => {
   return (
     <nav className='flex h-14 items-center justify-between bg-darkBeige px-5'>
-      <span className='font-serif text-xl font-semibold text-heavyGreen'>
-        Amiibo Hub
-      </span>
+      <Link href='/'>
+        <a className='font-serif text-xl font-semibold text-heavyGreen hover:text-darkGreen'>
+          Amiibo Hub
+        </a>
+      </Link>
       {/* menu icon */}
       <svg
         className=' text-mossGreen'

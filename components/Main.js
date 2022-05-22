@@ -19,7 +19,7 @@ const Main = () => {
         </p>
         {/* button */}
         <a
-          className='rounded-xl bg-darkBeige  py-4 px-6 text-mossGreen shadow-xl'
+          className='rounded-xl bg-darkBeige  py-4 px-6 text-mossGreen shadow-xl hover:bg-lightBeige'
           href=''
         >
           Browse by character
@@ -41,7 +41,7 @@ const Main = () => {
         </p>
         {/* button */}
         <a
-          className='rounded-xl bg-darkBeige  py-4 px-6 text-mossGreen shadow-xl'
+          className='rounded-xl bg-darkBeige  py-4 px-6 text-mossGreen shadow-xl hover:bg-lightBeige'
           href=''
         >
           Browse by Amiibo Series
@@ -64,7 +64,7 @@ const Main = () => {
         </p>
         {/* button */}
         <a
-          className='rounded-xl bg-darkBeige  py-4 px-6 text-mossGreen shadow-xl'
+          className='rounded-xl bg-darkBeige  py-4 px-6 text-mossGreen shadow-xl hover:bg-lightBeige'
           href=''
         >
           Browse by game series
