@@ -25,7 +25,7 @@ const Navbar = () => {
         </svg>
         {/* mobile menu */}
         {/* desktop menu */}
-        <ul className='flex items-center space-x-10 text-heavyGreen'>
+        <ul className='hidden items-center space-x-10 text-heavyGreen lg:flex'>
           <li className='flex items-center'>
             Browse All <FaCaretDown className=' h-8 w-8 fill-pumpkinOrange' />
           </li>

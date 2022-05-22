@@ -3,8 +3,8 @@ import React from 'react';
 const Hero = () => {
   return (
     <div className='relative mx-auto max-w-screen-2xl'>
-      <div className='absolute z-10 flex w-full items-end justify-center pt-3'>
-        <span className='p-2 text-4xl font-black text-white outline'>
+      <div className='absolute z-10 flex w-full justify-center pt-3 md:pt-16'>
+        <span className='p-2 text-4xl font-black text-white outline md:text-8xl'>
           Amiibo Hub
         </span>
       </div>
