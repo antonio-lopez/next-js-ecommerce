@@ -6,8 +6,9 @@ import { Hero, Main, Product, Cart } from '../components';
 const Home = ({ products }) => {
   return (
     <>
-      <Hero />
-      <Main />
+      {/* <Hero />
+      <Main /> */}
+      <Product />
       {/* <div>
         <h1>Title</h1>
         <p>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className='mt-10 grid place-items-center space-y-2 bg-darkBeige py-6 text-mossGreen'>
+    <footer className=' mt-[calc(5%_+_60px)] grid w-full place-items-center space-y-2 bg-darkBeige py-6 text-mossGreen 2xl:fixed 2xl:bottom-0'>
       <span className=' font-semibold'>Antonio Lopez © 2022</span>
       <div className='flex space-x-4'>
         {/* github */}

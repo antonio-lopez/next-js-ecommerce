@@ -32,6 +32,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'gameSeries',
+      title: 'Game Series',
+      type: 'string',
+    },
+    {
       name: 'au',
       title: 'AU Release',
       type: 'string',
