@@ -8,7 +8,6 @@ const Product = ({
 }) => {
   return (
     <div>
-      {console.log(slug)}
       {/* <Link href={`/product/${slug.current}`}> */}
       <Link href={`/amiibo/${slug.current}`}>
         <div>

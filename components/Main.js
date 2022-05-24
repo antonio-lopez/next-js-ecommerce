@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Main = () => {
@@ -20,12 +21,11 @@ const Main = () => {
           process with our team of expert authenticators.
         </p>
         {/* button */}
-        <a
-          className='rounded-xl bg-darkBeige  py-4 px-6 text-mossGreen shadow-xl hover:bg-lightBeige'
-          href=''
-        >
-          Browse by character
-        </a>
+        <Link href={`/amiibo/amiiboseries`}>
+          <a className='rounded-xl bg-darkBeige  py-4 px-6 text-mossGreen shadow-xl hover:bg-lightBeige'>
+            Browse by character
+          </a>
+        </Link>
       </div>
 
       {/* details 2 */}

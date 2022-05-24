@@ -3,32 +3,34 @@ import { client } from '../lib/client';
 import { urlFor } from '../lib/client';
 import { Hero, Main, Product, Products, Cart } from '../components';
 
-const Home = ({ products }) => {
+// const Home = ({ products }) => {
+const Home = () => {
   return (
     <>
-      {/* <Hero />
-      <Main /> */}
+      <Hero />
+      <Main />
       {/* <Products /> */}
-      <div>
+      {/* <div>
         <h1>Title</h1>
       </div>
+      {console.log('products', products)}
       {products?.map((product) => (
         <Product key={product._id} product={product} />
-      ))}
+      ))} */}
 
       {/* <Product product={products.length && products[0]} /> */}
     </>
   );
 };
 
-export const getServerSideProps = async () => {
-  const query = '*[_type == "product"][0...5]';
-  const products = await client.fetch(query);
+// export const getServerSideProps = async () => {
+//   const query = '*[_type == "product"][0...5]';
+//   const products = await client.fetch(query);
 
-  console.log(products);
+//   console.log('products', products);
 
-  return { props: { products } };
-};
+//   return { props: { products } };
+// };
 
 // get all amiibos
 // export const getServerSideProps = async () => {
