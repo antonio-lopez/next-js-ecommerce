@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
 import { FaCaretDown } from 'react-icons/fa';
-
+import { gameSeries, amiiboSeries, character } from '../data';
 const Navbar = () => {
+  console.log(gameSeries);
   return (
     <nav className=' bg-darkBeige '>
       <div className='mx-auto flex h-14 max-w-screen-2xl items-center justify-between px-5 '>
@@ -28,12 +29,43 @@ const Navbar = () => {
         <ul className='hidden items-center space-x-10 text-heavyGreen lg:flex'>
           <li className='flex items-center'>
             Browse All <FaCaretDown className=' h-8 w-8 fill-pumpkinOrange' />
+            {/* character list */}
+            <ul className='absolute top-10 z-50 hidden'>
+              {character.map((item, index) => (
+                <Link href={`/amiibo/${item.replace(/ /g, '')}`}>
+                  <a>
+                    <li key={index}>{item}</li>
+                  </a>
+                </Link>
+              ))}
+            </ul>
           </li>
           <li className='flex items-center'>
-            Series <FaCaretDown className=' h-8 w-8 fill-pumpkinOrange' />
+            Game Series <FaCaretDown className=' h-8 w-8 fill-pumpkinOrange' />
+            {/* game series list */}
+            <ul className='absolute top-10 z-50 hidden'>
+              {gameSeries.map((item, index) => (
+                <Link href={`/amiibo/gameseries/${item.replace(/ /g, '')}`}>
+                  <a>
+                    <li key={index}>{item}</li>
+                  </a>
+                </Link>
+              ))}
+            </ul>
           </li>
           <li className='flex items-center'>
-            Franchise <FaCaretDown className=' h-8 w-8 fill-pumpkinOrange' />
+            Amiibo Series{' '}
+            <FaCaretDown className=' h-8 w-8 fill-pumpkinOrange' />
+            {/* amiibo series list */}
+            <ul className='absolute top-10 z-50 hidden'>
+              {amiiboSeries.map((item, index) => (
+                <Link href={`/amiibo/amiiboseries/${item.replace(/ /g, '')}`}>
+                  <a>
+                    <li key={index}>{item}</li>
+                  </a>
+                </Link>
+              ))}
+            </ul>
           </li>
         </ul>
       </div>

@@ -7,7 +7,7 @@ const GameSeries = ({ products }) => {
       {console.log('products', products)}
       gameSeries
       {products?.map((product) => console.log(product))}
-      {console.log('products', products)}
+      {console.log('products', products.gameSeries)}
     </div>
   );
 };
