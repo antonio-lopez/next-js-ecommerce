@@ -1,11 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import { amiiboSeries } from '../../../data';
+import { gameSeries } from '../../../data';
 
-const AmiiboSeries = () => {
+const GameSeries = () => {
   return (
     <ul>
-      {amiiboSeries.map((item) => (
+      {gameSeries.map((item) => (
         <li key={item.id}>
           <Link href={`/amiibo/amiiboseries/${item.name.replace(/ /g, '')}`}>
             <a>{item.name}</a>
@@ -16,4 +16,4 @@ const AmiiboSeries = () => {
   );
 };
 
-export default AmiiboSeries;
+export default GameSeries;

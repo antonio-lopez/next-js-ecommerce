@@ -21,7 +21,7 @@ const Main = () => {
           process with our team of expert authenticators.
         </p>
         {/* button */}
-        <Link href={`/amiibo/amiiboseries`}>
+        <Link href={`/amiibo/amiibos`}>
           <a className='rounded-xl bg-darkBeige  py-4 px-6 text-mossGreen shadow-xl hover:bg-lightBeige'>
             Browse by character
           </a>
@@ -47,7 +47,7 @@ const Main = () => {
         {/* button */}
         <a
           className='rounded-xl bg-darkBeige  py-4 px-6 text-mossGreen shadow-xl hover:bg-lightBeige'
-          href=''
+          href={`/amiibo/amiiboseries`}
         >
           Browse by Amiibo Series
         </a>
@@ -73,7 +73,7 @@ const Main = () => {
         {/* button */}
         <a
           className='rounded-xl bg-darkBeige  py-4 px-6 text-mossGreen shadow-xl hover:bg-lightBeige'
-          href=''
+          href={`/amiibo/gameseries`}
         >
           Browse by game series
         </a>

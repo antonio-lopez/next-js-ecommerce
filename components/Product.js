@@ -3,20 +3,26 @@ import React from 'react';
 import { urlFor } from '../lib/client';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 
-const Product = ({
-  product: { image, name, slug, price, character, amiiboSeries },
-}) => {
+const Product = ({ product: { image, name, slug, amiiboSeries } }) => {
   return (
-    <div>
-      {/* <Link href={`/product/${slug.current}`}> */}
+    <>
+      {/* amiibo */}
       <Link href={`/amiibo/${slug.current}`}>
-        <div>
-          {name}
-          {/* {console.log(urlFor(image[0]).url())} */}
-          <img src={urlFor(image[0])} alt='' />
+        <div className='grid gap-y-4 text-center text-3xl font-semibold text-mossGreen'>
+          <img src={urlFor(image[0])} alt='amiibo cover' />
+          <span>{name}</span>
         </div>
       </Link>
-    </div>
+
+      {/* // <div>
+    //   <Link href={`/amiibo/${slug.current}`}>
+    //     <div>
+    //       {name}
+    //       <img src={urlFor(image[0])} alt='' />
+    //     </div>
+    //   </Link>
+    // </div> */}
+    </>
   );
 };
 

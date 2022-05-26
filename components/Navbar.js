@@ -1,9 +1,19 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { FaCaretDown } from 'react-icons/fa';
-import { gameSeries, amiiboSeries, character } from '../data';
+import { gameSeries, amiiboSeries, amiibo } from '../data';
 const Navbar = () => {
-  console.log(gameSeries);
+  // const [isHidden, setIsHidden] = useState(true);
+
+  // const showListToggle = () => {
+  //   console.log('yo!!');
+  //   setIsHidden(!isHidden);
+  // };
+
+  // console.log(isHidden);
+  // const amiiboMap = amiibo.map((item) => item.slug.current);
+  // console.log(amiiboMap);
+
   return (
     <nav className=' bg-darkBeige '>
       <div className='mx-auto flex h-14 max-w-screen-2xl items-center justify-between px-5 '>
@@ -27,43 +37,48 @@ const Navbar = () => {
         {/* mobile menu */}
         {/* desktop menu */}
         <ul className='hidden items-center space-x-10 text-heavyGreen lg:flex'>
-          <li className='flex items-center'>
+          <li className='group flex items-center'>
+            {/* <li className='flex items-center' onClick={showListToggle}> */}
             Browse All <FaCaretDown className=' h-8 w-8 fill-pumpkinOrange' />
             {/* character list */}
-            <ul className='absolute top-10 z-50 hidden'>
-              {character.map((item, index) => (
-                <Link href={`/amiibo/${item.replace(/ /g, '')}`}>
-                  <a>
-                    <li key={index}>{item}</li>
-                  </a>
-                </Link>
+            <ul className='absolute top-10 z-50 hidden group-hover:block'>
+              {amiibo.map((item) => (
+                <li key={item.slug.current}>
+                  <Link href={`/amiibo/${item.slug.current}`}>
+                    <a>{item.name}</a>
+                  </Link>
+                </li>
               ))}
             </ul>
           </li>
-          <li className='flex items-center'>
+          <li className='group flex items-center'>
             Game Series <FaCaretDown className=' h-8 w-8 fill-pumpkinOrange' />
             {/* game series list */}
-            <ul className='absolute top-10 z-50 hidden'>
-              {gameSeries.map((item, index) => (
-                <Link href={`/amiibo/gameseries/${item.replace(/ /g, '')}`}>
-                  <a>
-                    <li key={index}>{item}</li>
-                  </a>
-                </Link>
+            <ul className='absolute top-10 z-50 hidden group-hover:block'>
+              {gameSeries.map((item) => (
+                <li key={item.id}>
+                  <Link
+                    href={`/amiibo/amiiboseries/${item.name.replace(/ /g, '')}`}
+                  >
+                    <a>{item.name}</a>
+                  </Link>
+                </li>
               ))}
             </ul>
           </li>
-          <li className='flex items-center'>
+          <li className='group flex items-center'>
             Amiibo Series{' '}
             <FaCaretDown className=' h-8 w-8 fill-pumpkinOrange' />
             {/* amiibo series list */}
-            <ul className='absolute top-10 z-50 hidden'>
-              {amiiboSeries.map((item, index) => (
-                <Link href={`/amiibo/amiiboseries/${item.replace(/ /g, '')}`}>
-                  <a>
-                    <li key={index}>{item}</li>
-                  </a>
-                </Link>
+            <ul className='absolute top-10 z-50 hidden group-hover:block'>
+              {amiiboSeries.map((item) => (
+                <li key={item.id}>
+                  <Link
+                    href={`/amiibo/amiiboseries/${item.name.replace(/ /g, '')}`}
+                  >
+                    <a>{item.name}</a>
+                  </Link>
+                </li>
               ))}
             </ul>
           </li>
