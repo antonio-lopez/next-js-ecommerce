@@ -7,7 +7,7 @@ const AmiiboSeries = () => {
     <ul>
       {amiiboSeries.map((item) => (
         <li key={item.id}>
-          <Link href={`/amiibo/amiiboseries/${item.name.replace(/ /g, '')}`}>
+          <Link href={`/amiibo/amiiboseries/${item.name}`}>
             <a>{item.name}</a>
           </Link>
         </li>

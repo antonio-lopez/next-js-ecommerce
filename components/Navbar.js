@@ -14,6 +14,12 @@ const Navbar = () => {
   // const amiiboMap = amiibo.map((item) => item.slug.current);
   // console.log(amiiboMap);
 
+  const encodedGameSeries = gameSeries.map((item) => ({
+    id: item.id,
+    name: encodeURIComponent(item.name),
+  }));
+  // console.log(encodedGameSeries);
+
   return (
     <nav className=' bg-darkBeige '>
       <div className='mx-auto flex h-14 max-w-screen-2xl items-center justify-between px-5 '>
@@ -58,8 +64,11 @@ const Navbar = () => {
               {gameSeries.map((item) => (
                 <li key={item.id}>
                   <Link
-                    href={`/amiibo/amiiboseries/${item.name.replace(/ /g, '')}`}
+                    href={`/amiibo/gameseries/${encodeURIComponent(item.name)}`}
                   >
+                    {/* <Link
+                    href={`/amiibo/gameseries/${item.name.replace(/ /g, '')}`}
+                  > */}
                     <a>{item.name}</a>
                   </Link>
                 </li>
