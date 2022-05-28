@@ -33,7 +33,7 @@ export const gameSeries = [
   { id: '32', name: 'Xenoblade' },
 ];
 
-export const amiiboSeries = [{ id: '1', name: 'Super Smash Bros' }];
+export const amiiboSeries = [{ id: '1', name: 'Super Smash Bros.' }];
 
 export const amiibo = [
   {

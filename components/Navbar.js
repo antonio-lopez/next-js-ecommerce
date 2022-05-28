@@ -1,25 +1,8 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
 import { FaCaretDown } from 'react-icons/fa';
 import { gameSeries, amiiboSeries, amiibo } from '../data';
 const Navbar = () => {
-  // const [isHidden, setIsHidden] = useState(true);
-
-  // const showListToggle = () => {
-  //   console.log('yo!!');
-  //   setIsHidden(!isHidden);
-  // };
-
-  // console.log(isHidden);
-  // const amiiboMap = amiibo.map((item) => item.slug.current);
-  // console.log(amiiboMap);
-
-  const encodedGameSeries = gameSeries.map((item) => ({
-    id: item.id,
-    name: encodeURIComponent(item.name),
-  }));
-  // console.log(encodedGameSeries);
-
   return (
     <nav className=' bg-darkBeige '>
       <div className='mx-auto flex h-14 max-w-screen-2xl items-center justify-between px-5 '>
@@ -44,7 +27,6 @@ const Navbar = () => {
         {/* desktop menu */}
         <ul className='hidden items-center space-x-10 text-heavyGreen lg:flex'>
           <li className='group flex items-center'>
-            {/* <li className='flex items-center' onClick={showListToggle}> */}
             Browse All <FaCaretDown className=' h-8 w-8 fill-pumpkinOrange' />
             {/* character list */}
             <ul className='absolute top-10 z-50 hidden group-hover:block'>
@@ -66,9 +48,6 @@ const Navbar = () => {
                   <Link
                     href={`/amiibo/gameseries/${encodeURIComponent(item.name)}`}
                   >
-                    {/* <Link
-                    href={`/amiibo/gameseries/${item.name.replace(/ /g, '')}`}
-                  > */}
                     <a>{item.name}</a>
                   </Link>
                 </li>
@@ -83,7 +62,9 @@ const Navbar = () => {
               {amiiboSeries.map((item) => (
                 <li key={item.id}>
                   <Link
-                    href={`/amiibo/amiiboseries/${item.name.replace(/ /g, '')}`}
+                    href={`/amiibo/amiiboseries/${encodeURIComponent(
+                      item.name
+                    )}`}
                   >
                     <a>{item.name}</a>
                   </Link>

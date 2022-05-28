@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
 import { urlFor } from '../lib/client';
-import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 
 const Product = ({ product: { image, name, slug } }) => {
   return (
@@ -13,15 +12,6 @@ const Product = ({ product: { image, name, slug } }) => {
           <img src={urlFor(image[0])} alt='amiibo cover' />
         </div>
       </Link>
-
-      {/* // <div>
-    //   <Link href={`/amiibo/${slug.current}`}>
-    //     <div>
-    //       {name}
-    //       <img src={urlFor(image[0])} alt='' />
-    //     </div>
-    //   </Link>
-    // </div> */}
     </>
   );
 };

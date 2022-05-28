@@ -47,9 +47,9 @@ const Main = () => {
         {/* button */}
         <a
           className='rounded-xl bg-darkBeige  py-4 px-6 text-mossGreen shadow-xl hover:bg-lightBeige'
-          href={`/amiibo/amiiboseries`}
+          href={`/amiibo/gameseries`}
         >
-          Browse by Amiibo Series
+          Browse by game Series
         </a>
       </div>
 
@@ -73,9 +73,9 @@ const Main = () => {
         {/* button */}
         <a
           className='rounded-xl bg-darkBeige  py-4 px-6 text-mossGreen shadow-xl hover:bg-lightBeige'
-          href={`/amiibo/gameseries`}
+          href={`/amiibo/amiiboseries`}
         >
-          Browse by game series
+          Browse by amiibo series
         </a>
       </div>
     </section>
