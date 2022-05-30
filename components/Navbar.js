@@ -16,7 +16,7 @@ const Navbar = () => {
         {/* mobile menu icon */}
         <img
           onClick={() => setIsOpen((open) => !open)}
-          className={`${isOpen ? 'hidden' : 'block'}`}
+          className={`${isOpen ? 'hidden' : 'block'} lg:hidden`}
           src='/images/icon-menu.svg'
           alt='icon menu'
         />

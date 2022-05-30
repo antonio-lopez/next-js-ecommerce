@@ -4,7 +4,7 @@ import { amiiboSeries } from '../../../data';
 
 const AmiiboSeries = () => {
   return (
-    <div className='mx-auto max-w-screen-2xl'>
+    <div className='mx-auto min-h-screen max-w-screen-2xl'>
       <h1 className='pt-10 text-center text-4xl text-heavyGreen'>
         Amiibo Series
       </h1>
