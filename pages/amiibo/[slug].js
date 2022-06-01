@@ -1,10 +1,13 @@
 import React from 'react';
 import { client, urlFor } from '../../lib/client';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
+import { useStateContext } from '../../context/StateContext';
 
 const ProductDetails = ({ product }) => {
   const { image, name, price, amiiboSeries, gameSeries, au, eu, jp, na } =
     product;
+  const { decQty, incQty, qty, onAdd } = useStateContext();
+
   return (
     <div className='mx-auto grid max-w-screen-2xl grid-cols-1 place-items-center gap-y-5 pt-10 lg:grid-cols-2'>
       <img src={urlFor(image[0])} alt='amiibo' />
@@ -57,18 +60,21 @@ const ProductDetails = ({ product }) => {
         {/* quantity counter */}
         <span className='mt-10 mb-2 text-heavyGreen'>Quantity: </span>
         <div className=' flex items-center space-x-3 bg-white px-3 outline outline-1 outline-darkGreen'>
-          <span onClick={''} className='hover:cursor-pointer'>
+          <span onClick={decQty} className='hover:cursor-pointer'>
             <AiOutlineMinus />
           </span>
-          <span className='border-r border-l border-darkGreen px-3'>5</span>
-          <span onClick={''} className='hover:cursor-pointer'>
+          <span className='border-r border-l border-darkGreen px-3'>{qty}</span>
+          <span onClick={incQty} className='hover:cursor-pointer'>
             <AiOutlinePlus />
           </span>
         </div>
 
         <div className='space-y-4 px-7 pt-5'>
           {/* add to cart buttons */}
-          <button className='w-full rounded-xl bg-transparent  px-16 py-3  text-heavyGreen outline outline-1 outline-darkGreen hover:bg-lightBeige'>
+          <button
+            onClick={() => onAdd(product, qty)}
+            className='w-full rounded-xl bg-transparent  px-16 py-3  text-heavyGreen outline outline-1 outline-darkGreen hover:bg-lightBeige'
+          >
             Add to cart
           </button>
           {/* buy now button */}

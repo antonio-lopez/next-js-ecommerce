@@ -2,8 +2,13 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaCaretDown } from 'react-icons/fa';
 import { gameSeries, amiiboSeries, amiibo } from '../data';
+import { AiOutlineShopping } from 'react-icons/ai';
+import { Cart } from './';
+import { useStateContext } from '../context/StateContext';
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { showCart, setShowCart, totalQuantities } = useStateContext();
 
   return (
     <nav className=' bg-darkBeige '>
@@ -96,6 +101,20 @@ const Navbar = () => {
               ))}
             </ul>
           </li>
+          {/* cart icon */}
+          <Link href={'/cart'}>
+            <button
+              className='relative flex'
+              type='button'
+              // onClick={() => setShowCart(true)}
+            >
+              <AiOutlineShopping className='h-6 w-6' />
+              <span className='absolute -right-3 -top-1 h-5 w-5 rounded-full bg-pumpkinOrange  text-xs text-white'>
+                {totalQuantities}
+              </span>
+            </button>
+          </Link>
+          {/* {showCart && <Cart />} */}
         </ul>
       </div>
     </nav>
