@@ -31,22 +31,22 @@ const Cart = () => {
       )}
 
       {/* cart items */}
-      <div className='mx-auto grid max-w-screen-2xl justify-center gap-y-5 pt-10'>
+      <div className='mx-auto grid max-w-screen-2xl gap-y-5 pt-10'>
         {cartItems.length >= 1 &&
           cartItems.map((item) => (
             <div
-              className='grid grid-cols-2 gap-x-10 bg-lightGreen/50 p-5'
+              className='grid grid-cols-1 justify-items-center bg-lightGreen/50 p-5 md:grid-cols-2 md:gap-x-10'
               key={item._id}
             >
               {/* image */}
               <img
                 src={urlFor(item?.image[0])}
-                className='  h-40 w-40 rounded-xl bg-gray-100'
+                className='  h-40 w-40 rounded-xl  bg-gray-100 p-3'
               />
               {/* cart details */}
-              <div className=' space-y-8 text-center'>
-                <div className='space-y-4 text-heavyGreen'>
-                  <h1>{item.name}</h1>
+              <div className=' space-y-5 text-center md:space-y-8'>
+                <div className=' space-y-2 pt-3 text-heavyGreen md:pt-0'>
+                  <h1 className='text-xl'>{item.name}</h1>
                   <h2>${item.price}</h2>
                 </div>
                 {/* quantity counter */}
