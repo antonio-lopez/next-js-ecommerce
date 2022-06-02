@@ -13,8 +13,14 @@ import { urlFor } from '../lib/client';
 
 const Cart = () => {
   const cartRef = useRef();
-  const { totalPrice, totalQuantities, cartItems, setShowCart } =
-    useStateContext();
+  const {
+    totalPrice,
+    totalQuantities,
+    cartItems,
+    setShowCart,
+    toggleCartItemQty,
+    onRemove,
+  } = useStateContext();
   return (
     <div className='min-h-screen'>
       <div className='grid grid-cols-1'>
@@ -54,13 +60,19 @@ const Cart = () => {
                   </div>
                   {/* quantity counter */}
                   <div className='mx-10 flex items-center justify-between space-x-3 bg-white px-3 outline outline-1 outline-darkGreen'>
-                    <span onClick={''} className='hover:cursor-pointer'>
+                    <span
+                      onClick={() => toggleCartItemQty(item._id, 'dec')}
+                      className='hover:cursor-pointer'
+                    >
                       <AiOutlineMinus />
                     </span>
                     <span className='border-r border-l border-darkGreen px-3'>
-                      {0}
+                      {item.quantity}
                     </span>
-                    <span onClick={''} className='hover:cursor-pointer'>
+                    <span
+                      onClick={() => toggleCartItemQty(item._id, 'inc')}
+                      className='hover:cursor-pointer'
+                    >
                       <AiOutlinePlus />
                     </span>
                   </div>
@@ -68,7 +80,7 @@ const Cart = () => {
                   <button
                     type='button'
                     className=' text-pumpkinOrange'
-                    onClick={''}
+                    onClick={() => onRemove(item)}
                   >
                     <TiDeleteOutline size={30} />
                   </button>
