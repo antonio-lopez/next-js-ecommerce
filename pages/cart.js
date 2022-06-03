@@ -9,6 +9,7 @@ import { TiDeleteOutline } from 'react-icons/ti';
 import toast from 'react-hot-toast';
 import { useStateContext } from '../context/StateContext';
 import { urlFor } from '../lib/client';
+import getStripe from '../lib/getStripe';
 
 const Cart = () => {
   const cartRef = useRef();
@@ -19,6 +20,28 @@ const Cart = () => {
     toggleCartItemQty,
     onRemove,
   } = useStateContext();
+
+  const handleCheckout = async () => {
+    const stripe = await getStripe();
+
+    // response from NEXT JS API
+    const response = await fetch('/api/stripe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cartItems),
+    });
+
+    if (response.statusCode === 500) return;
+
+    const data = await response.json();
+
+    toast.loading('Redirecting...');
+
+    stripe.redirectToCheckout({ sessionId: data.id });
+  };
+
   return (
     <div className='min-h-screen'>
       <div className='grid grid-cols-1'>
@@ -94,8 +117,11 @@ const Cart = () => {
               </span>
               <span className='text-mossGreen'>${totalPrice}</span>
             </div>
-            <button className=' rounded-xl bg-pumpkinOrange py-3 px-16 text-white shadow-2xl hover:bg-orange-500'>
-              Buy now
+            <button
+              onClick={handleCheckout}
+              className=' rounded-xl bg-pumpkinOrange py-3 px-16 text-white shadow-2xl hover:bg-orange-500'
+            >
+              Pay with Stripe
             </button>
           </div>
         )}
