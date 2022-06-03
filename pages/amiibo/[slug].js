@@ -2,11 +2,16 @@ import React from 'react';
 import { client, urlFor } from '../../lib/client';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { useStateContext } from '../../context/StateContext';
+import Link from 'next/link';
 
 const ProductDetails = ({ product }) => {
   const { image, name, price, amiiboSeries, gameSeries, au, eu, jp, na } =
     product;
   const { decQty, incQty, qty, onAdd } = useStateContext();
+
+  const handleBuyNow = () => {
+    onAdd(product, qty);
+  };
 
   return (
     <div className='mx-auto grid max-w-screen-2xl grid-cols-1 place-items-center gap-y-5 pt-10 lg:grid-cols-2'>
@@ -78,9 +83,14 @@ const ProductDetails = ({ product }) => {
             Add to cart
           </button>
           {/* buy now button */}
-          <button className='w-full rounded-xl bg-pumpkinOrange py-3 px-16 text-white shadow-2xl hover:bg-orange-500'>
-            Buy now
-          </button>
+          <Link href={'/cart'}>
+            <button
+              onClick={handleBuyNow}
+              className='w-full rounded-xl bg-pumpkinOrange py-3 px-16 text-white shadow-2xl hover:bg-orange-500'
+            >
+              Buy now
+            </button>
+          </Link>
         </div>
       </div>
     </div>
