@@ -52,6 +52,15 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
+          {/* cart icon */}
+          <Link href={'/cart'}>
+            <a className='relative mt-6 flex justify-center text-center'>
+              <AiOutlineShopping className='h-10 w-10' />
+              <span className='absolute right-16 -top-0 h-5 w-5 rounded-full bg-pumpkinOrange  text-xs text-white'>
+                {totalQuantities}
+              </span>
+            </a>
+          </Link>
         </div>
         {/* desktop menu */}
         <ul className='hidden items-center space-x-10 text-heavyGreen lg:flex'>
@@ -103,18 +112,13 @@ const Navbar = () => {
           </li>
           {/* cart icon */}
           <Link href={'/cart'}>
-            <button
-              className='relative flex'
-              type='button'
-              // onClick={() => setShowCart(true)}
-            >
+            <a className='relative hidden text-center lg:flex'>
               <AiOutlineShopping className='h-6 w-6' />
               <span className='absolute -right-3 -top-1 h-5 w-5 rounded-full bg-pumpkinOrange  text-xs text-white'>
                 {totalQuantities}
               </span>
-            </button>
+            </a>
           </Link>
-          {/* {showCart && <Cart />} */}
         </ul>
       </div>
     </nav>
