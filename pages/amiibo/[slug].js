@@ -48,7 +48,7 @@ const ProductDetails = ({ product }) => {
             <div className='rounded-md bg-darkBeige  py-2 px-20 font-semibold text-heavyGreen shadow-xl'>
               Release
             </div>
-            <ul className='space-y-2 text-xs font-black text-mossGreen lg:pt-3'>
+            <ul className='space-y-2 pt-3 text-xs font-black text-mossGreen'>
               <li>AU : {au}</li>
               <li>EU : {eu}</li>
               <li>JP : {jp}</li>

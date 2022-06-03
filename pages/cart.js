@@ -3,7 +3,6 @@ import Link from 'next/link';
 import {
   AiOutlineMinus,
   AiOutlinePlus,
-  AiOutlineLeft,
   AiOutlineShopping,
 } from 'react-icons/ai';
 import { TiDeleteOutline } from 'react-icons/ti';
@@ -17,7 +16,6 @@ const Cart = () => {
     totalPrice,
     totalQuantities,
     cartItems,
-    setShowCart,
     toggleCartItemQty,
     onRemove,
   } = useStateContext();
@@ -91,7 +89,9 @@ const Cart = () => {
         {cartItems.length >= 1 && (
           <div className='grid grid-cols-1 justify-items-center space-y-4 pt-10'>
             <div className='space-x-8'>
-              <span className='text-mossGreen'>Subtotal:</span>
+              <span className='text-mossGreen'>
+                Subtotal ({totalQuantities} items):
+              </span>
               <span className='text-mossGreen'>${totalPrice}</span>
             </div>
             <button className=' rounded-xl bg-pumpkinOrange py-3 px-16 text-white shadow-2xl hover:bg-orange-500'>
