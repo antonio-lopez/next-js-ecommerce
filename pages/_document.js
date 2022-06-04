@@ -15,6 +15,7 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Roboto:wght@500;700;900&display=swap'
             rel='stylesheet'
           />
+          <link rel='shortcut icon' href='/icons8-game-flaticons-flat-32.png' />
         </Head>
         <body className='bg-lightBeige'>
           <Main />

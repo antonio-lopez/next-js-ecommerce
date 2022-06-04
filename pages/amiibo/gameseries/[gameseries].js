@@ -4,7 +4,7 @@ import Product from '../../../components/Product';
 
 const GameSeries = ({ series }) => {
   return (
-    <div className='mx-auto grid max-w-screen-2xl grid-cols-1  gap-y-5   pt-10  lg:grid-cols-4'>
+    <div className='mx-auto grid max-w-screen-2xl grid-cols-1  gap-y-5 px-10 pt-10  lg:grid-cols-4  lg:px-5'>
       <h1 className='pb-5 text-center text-5xl font-bold text-heavyGreen lg:col-span-4'>
         {series[0].gameSeries} Series
       </h1>
