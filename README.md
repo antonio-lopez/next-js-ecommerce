@@ -17,7 +17,7 @@
 
 ## About The Project
 
-🌐 [Live Demo]()
+🌐 [Live Demo](https://antonio-amiibo-hub.vercel.app/)
 
 ![screenshot](/public/amiibo-hub-screenshot.png)
 
