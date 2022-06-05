@@ -1,34 +1,127 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div id="top"></div>
+
+# Amiibo Hub
+
+> A fake Next.js Ecommerce store where you can purchase an assortment of Amiibos at unbeatable prices.
+
+## Table of contents
+
+- [About The Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Acknowledgments](#acknowledgments)
+- [Author](#author)
+
+## About The Project
+
+🌐 [Live Demo]()
+
+![screenshot](/public/amiibo-hub-screenshot.png)
+
+- A responsive, full-stack, Next.js Ecommerce application where you can browse for Amiibos, add them to your cart, and checkout
+- Stripe integration for processing payments, shipping rates, and checkout process.
+- Products are easily managed using Sanity, a content management system, as the backend.
+- Optimized data fetching using Next.js server-side rendering and static generation.
+- State management using React Context API.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Built With
+
+- [Next.js](https://nextjs.org/)
+- [React.js](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Sanity](https://www.sanity.io/)
+- [Stripe](https://stripe.com/)
+- [Amiibo API](https://github.com/N3evin/AmiiboAPI)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running follow these simple example steps.
 
-```bash
-npm run dev
-# or
-yarn dev
+### Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Have installed the latest stable version of [node.js](https://nodejs.org/en/)
+- Sign up for a [Sanity account](https://www.sanity.io/), create your dataset, and obtain your `Sanity Token`, `Project ID`, and `Dataset`.
+- Sign up for a [Stripe account](https://stripe.com/) and obtain your `Publishable Key` and `Secret Key`.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Installation
+
+Clone repository
+
+```
+git clone https://github.com/antonio-lopez/next-js-ecommerce
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install dependencies
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+cd next-js-ecommerce
+npm install
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+cd sanity-ecommerce
+npm install
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Create a `.env` file in the root of your project and fill in these environment variables with your custom keys.
 
-## Learn More
+```
+NEXT_PUBLIC_SANITY_TOKEN=
+NEXT_PUBLIC_SANITY_PROJECT_ID=
+NEXT_PUBLIC_SANITY_DATASET=
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+NEXT_PUBLIC_STRIPE_SECRET_KEY=
+```
 
-To learn more about Next.js, take a look at the following resources:
+Fetch data from the Amiibo API using `sanityExternalAPIFetch.js` script by filling in the variables with your own Sanity dataset.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+const client = sanityClient({
+  projectId: '',
+  dataset: '',
+  apiVersion: '',
+  token: '',
+  useCdn: true,
+});
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Deploy on Vercel
+## Usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+cd next-js-ecommerce
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Acknowledgments
+
+Amiibo images and information pulled from N3evin's Amiibo API and transferred using Sanity's external API fetch.
+
+- Amiibo API - An Amiibo database that holds all amiibo information in a single API
+  - [Github](https://github.com/N3evin/AmiiboAPI)
+  - [Documentation](https://www.amiiboapi.com/docs/)
+- Sanity external API fetch
+  - [Guide](https://www.sanity.io/guides/guide-importing-data-from-external-sources)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Author
+
+👤 **Antonio Lopez**
+
+- Website: [Antonio Lopez](https://www.antoniolopez.me/)
+- Github: [@antonio-lopez](https://github.com/antonio-lopez)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
