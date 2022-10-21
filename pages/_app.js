@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
               'A Next.js Ecommerce store where you can purchase an assortment of Amiibos at unbeatable prices. Browse our collection or choose from a game series or an Amiibo series.',
             images: [
               {
-                url: 'https://raw.githubusercontent.com/antonio-lopez/nextjs-drinks-ecommerce/main/public/images/og-modern-times-home.png',
+                url: 'https://raw.githubusercontent.com/antonio-lopez/next-js-ecommerce/main/public/images/amiibo-home.jpg',
                 width: 800,
                 height: 600,
                 alt: 'Amiibo Home Page',
