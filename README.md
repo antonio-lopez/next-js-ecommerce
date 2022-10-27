@@ -19,6 +19,8 @@
 
 🌐 [Live Demo](https://antonio-amiibo-hub.vercel.app/)
 
+🎨 [Figma Design](https://www.figma.com/file/uWK4dJdTAO9OJS3fDy58hu/Amiibo-Hub?node-id=0%3A1)
+
 ![screenshot](/public/amiibo-hub-screenshot.png)
 
 - A responsive, full-stack, Next.js Ecommerce application where you can browse for Amiibos, add them to your cart, and checkout
